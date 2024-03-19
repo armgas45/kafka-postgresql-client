@@ -1,1 +1,20 @@
-spring.application.name=kafka-postgresql-client
+# All confidential data should be injected from the ENV unless used locally
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/posts
+    username: kafka-user
+    password: kafka-password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+logging:
+  level:
+    org.apache: OFF
+    kafka: OFF
